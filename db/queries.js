@@ -13,7 +13,7 @@ const bcrypt = require('bcrypt');
         .where('email', email)
         .first();
     }
-   function getUserByID(id) {
+   function getId(id) {
         return knex("users")
           .where('id', id)
             .first()
