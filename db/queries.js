@@ -29,5 +29,7 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
 getAllUsers,
-getUserByEmail
+getUserByEmail,
+getId,
+newUser 
 }
