@@ -4,7 +4,8 @@ const queries = require('../db/queries')
 
 
 router.post('/signup',(req,res, next)=> {
-  if(validUser(req.body)){
+  var hash = bcrypt.hasSynch(req.params.password, 10);
+
 
   }else{
    next(neew Error('invalid user'))

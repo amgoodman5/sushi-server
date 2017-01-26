@@ -4,32 +4,65 @@ const knex = require('./knex');
 const bcrypt = require('bcrypt');
 
 
-  function getAllUsers() {
-        return knex('users');
-    }
 
-     function getUserByEmail(email) {
-        return knex('users')
+function getAllSushi() {
+    return knex('sushi');
+}
+
+
+function getSingleSushiById(id) {
+    return knex('sushi')
+        .select()
+        .where('id', id)
+        .first()
+}
+
+function getUpdateSushi(id) {
+    return knex('sushi')
+        .select()
+        .where('id', id)
+    update()
+
+}
+
+function deleteSushi(id) {
+    return knex('sushi')
+        .where('id', id)
+        .del();
+}
+
+function getAllUsers() {
+    return knex('users');
+}
+
+function getUserByEmail(email) {
+    return knex('users')
         .where('email', email)
         .first();
-    }
-   function getId(id) {
-        return knex("users")
-          .where('id', id)
-            .first()
-    }
-   function newUser(users) {
-        return knex("users")
-            .insert(users, "*")
-    }
+}
+
+function getId(id) {
+    return knex("users")
+        .where('id', id)
+        .first()
+}
+
+function newUser(users) {
+    return knex("users")
+        .insert(users, "*")
+}
 
 
 
 
 
 module.exports = {
-getAllUsers,
-getUserByEmail,
-getId,
-newUser 
+     deleteSushi,
+    getUpdateSushi,
+    getSingleSushiById,
+    getAllSushi,
+    getAllUsers,
+    getUserByEmail,
+    getId,
+    newUser
 }
